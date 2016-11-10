@@ -22,8 +22,8 @@ _Z3fibi:
 	sub	eax, 1			; subtract 1 to get n-1
 	mov	edi, eax		; edi is now n-1
 	call	_Z3fibi			; recursive call
-	mov	ebx, eax
-	mov	eax, DWORD PTR [rbp-20]
+	mov	ebx, eax		; when call finished, store result in ebx
+	mov	eax, DWORD PTR [rbp-20] ; get original n
 	sub	eax, 2			; subtract 2 to get n-2
 	mov	edi, eax		; edi is now n-2
 	call	_Z3fibi			; recursive call
